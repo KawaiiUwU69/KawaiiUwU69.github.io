@@ -25,16 +25,26 @@
     font-size: 69px;
 ">UwU -"poggers"</p>
 <script>
+	const down = () => {
+		img.src = "button down.png";
+	};
+
+	const up = () => {
+		img.src = "button up.png";
+        	let x = Math.floor(Math.random() * 100);
+		let y = Math.floor(Math.random() * 100);
+		document.querySelector(".outputbruh").innerHTML += "<img class=\"baseimg\" src=\"RedButton.png\" style=\"\r\n    width: 100px;\r\n    position: absolute;\r\n    left: "+x+"%;\r\n    top: "+y+"%;\r\n    /* display: none; z-index: -10; */\r\n\">";
+	};
+
+
     let img = document.querySelector(".bruhbtn");
-    img.addEventListener("mousedown", () => {
-        img.src = "button down.png";
-    });
-    img.addEventListener("mouseup", () => {
-	img.src = "button up.png";
-        let x = Math.floor(Math.random() * 100);
-	let y = Math.floor(Math.random() * 100);
-	document.querySelector(".outputbruh").innerHTML += "<img class=\"baseimg\" src=\"RedButton.png\" style=\"\r\n    width: 100px;\r\n    position: absolute;\r\n    left: "+x+"%;\r\n    top: "+y+"%;\r\n    /* display: none; z-index: -10; */\r\n\">";
-    });
+    img.addEventListener("mousedown", down);
+    img.addEventListener("mouseup", up);
+
+img.addEventListener("touchstart", down);
+    img.addEventListener("touchend", up);
+
+	
 </script>
 
 </body></html>
